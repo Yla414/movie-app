@@ -1,0 +1,97 @@
+.flickbase__homebar {
+   height: 100%;
+   padding: 2rem;
+   border-right: 1px solid var(--color-grey);
+}
+
+.flickbase__homebar-logo {
+   display: flex;
+   align-items: center;
+   gap: 4px;
+   cursor: pointer;
+}
+
+.flickbase__homebar-logo__icon {
+   animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.flickbase__homebar-content {
+   margin: 2.5rem 0 0;
+   display: grid;
+   align-items: center;
+   gap: 2rem;
+}
+
+.flickbase__homebar-menu,
+.flickbase__homebar-library,
+.flickbase__homebar-social,
+.flickbase__homebar-general {
+   display: grid;
+   align-items: center;
+   gap: 1.5rem;
+}
+
+.flickbase__homebar-menu__heading {
+   display: flex;
+   align-items: center;
+   gap: 4px;
+}
+
+.flickbase__homebar-menu__content,
+.flickbase__homebar-menu__auth {
+   position: relative;
+   width: 100%;
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+   gap: 1.65rem;
+}
+
+.flickbase__homebar-menu__content li,
+.flickbase__homebar-menu__auth li {
+   width: 100%;
+   position: relative;
+   display: flex;
+   align-items: center;
+   gap: 0.35rem;
+
+   cursor: pointer;
+   transition: var(--transition-timing);
+}
+
+.flickbase__homebar-menu__content li.active::before {
+   content: "";
+   position: absolute;
+   width: 4px;
+   height: 100%;
+   background: var(--color-primary);
+   border-radius: 1rem;
+   right: -51px;
+   top: 0;
+   transition: var(--transition-timing);
+}
+
+.flickbase__homebar-menu__content li.active .active_icon {
+   color: var(--color-primary);
+   transition: var(--transition-timing);
+}
+
+.flickbase__homebar-menu__content li p,
+.flickbase__homebar-menu__auth li p {
+   font-size: 17px;
+}
+
+#mt {
+   margin-top: 2rem;
+}

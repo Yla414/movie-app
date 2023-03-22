@@ -1,0 +1,6 @@
+.flickbase__homepage {
+   height: 100%;
+   display: grid;
+   grid-template-columns: 18rem auto 16rem;
+   gap: 3rem;
+}
