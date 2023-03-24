@@ -1,3 +1,73 @@
 .flickbase__content {
-   padding: 2rem;
+   width: 100%;
+   padding: 1.35rem;
+}
+
+.flickbase__content-header {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.flickbase__content-header__search-bar {
+   width: 50%;
+   background: var(--color-grey);
+   display: flex;
+   align-items: center;
+   gap: 0.3rem;
+
+   padding: .5rem 1rem;
+   border-radius: .5rem;
+}
+
+.flickbase__content-header__search-bar__button {
+   background: transparent;
+   color: var(--color-primary);
+   border: 0;
+   outline: none;
+
+   cursor: pointer;
+   transition: var(--transition-timing);
+}
+
+.flickbase__content-header__profile-area {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.flickbase__content-header__profile-area__notification {
+   position: relative;
+   z-index: 1;
+   cursor: pointer;
+}
+
+.flickbase__content-header__profile-area__notification-bell__count {
+   position: absolute;
+   z-index: 2;
+   top: -2px;
+   right: 0;
+   width: 9px;
+   aspect-ratio: 1/1;
+   background: var(--color-primary);
+   border-radius: 50%;
+}
+
+.flickbase__content-header__profile-area__user-dropdown {
+   display: flex;
+   align-items: center;
+   gap: .5rem;
+}
+
+.flickbase__content-header__profile-area__user {
+   display: flex;
+   align-items: center;
+   gap: .85rem;
+}
+
+.flickbase__content-header__profile-area__user-dropdown img {
+   width: 49px;
+   aspect-ratio: 1/1;
+   border-radius: 50%;
 }

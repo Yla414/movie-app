@@ -5,6 +5,10 @@
    list-style-type: none;
 }
 
+::-webkit-search-cancel-button {
+   display: none;
+}
+
 body {
    width: 100vw;
    height: 100vh;
@@ -17,6 +21,24 @@ body {
    scroll-behavior: smooth;
    transition: var(--transition-timing);
 }
+
+input {
+   width: 100%;
+   background: transparent;
+   font-family: var(--font-family);
+   font-size: 15px;
+   color: #fff;
+
+   border: 0;
+   outline: none;
+}
+
+input::placeholder {
+   color: grey;
+   background: transparent;
+   height: inherit;
+}
+
 
 .grey__text {
    color: var(--grey-text);
