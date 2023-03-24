@@ -46,6 +46,7 @@ const Homebar = () => {
       });
    })
 
+
   return (
     <div className="flickbase__homebar">
       <div className="flickbase__homebar-logo">
