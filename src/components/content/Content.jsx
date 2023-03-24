@@ -4,7 +4,7 @@ import './content.css';
 const Content = () => {
   return (
     <div className='flickbase__content'>
-      Content
+      
     </div>
   )
 }
