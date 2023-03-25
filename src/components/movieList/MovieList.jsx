@@ -10,7 +10,7 @@ const MovieList = (props) => {
                <img src={movie.Poster} alt="poster" />
             </div>
             <h2>{movie.Title}</h2>
-            <p>{movie.Year}</p>
+            <p>Released: {movie.Year}</p>
          </div>
       ))}
     </>

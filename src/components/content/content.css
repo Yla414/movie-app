@@ -83,4 +83,9 @@
    .flickbase__content-header__profile-area {
       display: none;
    }
+   .flickbase__content-container-row {
+      margin-top: 1rem;
+      grid-template-columns: 1fr;
+      place-items: center;
+   }
 }
