@@ -2,35 +2,46 @@ import React, { useEffect, useState } from 'react';
 import './content.css';
 
 import { 
-  RiSearch2Line as SearchButton,
   RiNotification2Line as Bell
 } from 'react-icons/ri';
 
-import { FaChevronDown as DropdownIcon } from 'react-icons/fa';
+import { 
+  FaChevronDown as DropdownIcon 
+} from 'react-icons/fa';
 
+import { RiArrowLeftCircleLine as Prev, RiArrowRightCircleLine as Next  } from'react-icons/ri'
+ 
 import userImage from '../../assets/user.png';
+import MovieList from '../movieList/MovieList';
+import SearchBox from '../container/searchBox/SearchBox';
 
 const Content = () => {
 
   const [movies, setMovies] = useState([]);
 
+  const [searchValue, setSearchValue] = useState('');
+
+  const getMovieRequest = async (searchValue) => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=94475b0c`;
+
+    const response = await fetch(url);
+    const responseJson = await response.json();
+
+    // console.log(responseJson);
+    if (responseJson.Search) {
+      setMovies(responseJson.Search)
+    }
+  }
+
   useEffect(() => {
-    fetch(`https://www.omdbapi.com/movies`)
-    .then(response => response.json)
-    .then(data => data.results)
-    .catch(error => alert(error))
-  }, []);
+    getMovieRequest(searchValue);
+  }, [searchValue])
 
   return (
     <div className='flickbase__content'>
       <div className='flickbase__content-header'>
         {/* Start of the search bar */}
-        <div className='flickbase__content-header__search-bar'>
-          <input type="search" name="search" id="search-box" placeholder='Search for TV Shows, Series, Movies, and more...' />
-          <button type="submit" className='flickbase__content-header__search-bar__button'>
-            <SearchButton className='search-button' size={23} />
-          </button>
-        </div>
+        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         {/* End of search bar */}
 
         {/* Start of Profile */}
@@ -55,19 +66,19 @@ const Content = () => {
 
       {/* Start of content */}
       <div className='flickbase__content-container'>
-        <div className='flickbase__content-container__trending'>
-          <h2>Popular Movies</h2>
- 
-          <ul>
-            {movies.map(movie => (
-                <li key={movie.id}>
-                  <h3>{movie.title}</h3>
-                  <p>{movie.overview}</p>
-                </li>
-              ))}
-          </ul>
+        <div className='flickbase__content-container__heading'>
+          <h2>Trending</h2>
+
+          <div className='flickbase__content-container__heading-controller'>
+            <Prev color='grey' size={35} style={{cursor: 'pointer'}} />
+            <Next color='grey' size={35} style={{cursor: 'pointer'}} />
+          </div>
+        </div>
+        <div className='flickbase__content-container-row'>
+          <MovieList movies={movies} />
         </div>
       </div>
+      
     </div>
   )
 }

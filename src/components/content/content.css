@@ -1,6 +1,6 @@
 .flickbase__content {
    width: 100%;
-   padding: 1.35rem;
+   padding: 2rem;
 }
 
 .flickbase__content-header {
@@ -8,27 +8,6 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-}
-
-.flickbase__content-header__search-bar {
-   width: 50%;
-   background: var(--color-grey);
-   display: flex;
-   align-items: center;
-   gap: 0.3rem;
-
-   padding: .5rem 1rem;
-   border-radius: .5rem;
-}
-
-.flickbase__content-header__search-bar__button {
-   background: transparent;
-   color: var(--color-primary);
-   border: 0;
-   outline: none;
-
-   cursor: pointer;
-   transition: var(--transition-timing);
 }
 
 .flickbase__content-header__profile-area {
@@ -70,4 +49,38 @@
    width: 49px;
    aspect-ratio: 1/1;
    border-radius: 50%;
+}
+
+.flickbase__content-container {
+   margin-top: 2.5rem;
+   display: grid;
+   align-items: center;
+   gap: 1rem;
+}
+
+.flickbase__content-container__heading {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.flickbase__content-container__heading-controller {
+   display: flex;
+   align-items: center;
+   gap: .75rem;
+}
+
+.flickbase__content-container-row {
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 1rem;
+   align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+   .flickbase__content-header__profile-area {
+      display: none;
+   }
 }

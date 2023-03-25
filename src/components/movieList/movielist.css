@@ -1,0 +1,32 @@
+.flickbase__movieList-container {
+   width: 230px;
+   height: 400px;
+
+   background: var(--color-grey);
+
+   display: grid;
+   row-gap: 1rem;
+   gap: 0.3rem;
+
+   border-radius: 7px;
+   text-align: center;
+}
+
+.flickbase__movieList-container__image {
+   height: 300px;
+   width: 100%;
+}
+
+.flickbase__movieList-container__image img {
+   height: 100%;
+   width: 100%;
+   border-radius: 7px;
+}
+
+.flickbase__movieList-container h2 {
+   font-size: 17px;
+}
+
+.flickbase__movieList-container p {
+   padding-bottom: 1rem;
+}

@@ -1,0 +1,26 @@
+.flickbase__content-header__search-bar {
+   width: 50%;
+   background: var(--color-grey);
+   display: flex;
+   align-items: center;
+   gap: 0.3rem;
+
+   padding: .5rem 1rem;
+   border-radius: .5rem;
+}
+
+.flickbase__content-header__search-bar__button {
+   background: transparent;
+   color: var(--color-primary);
+   border: 0;
+   outline: none;
+
+   cursor: pointer;
+   transition: var(--transition-timing);
+}
+
+@media screen and (max-width: 550px) {
+   .flickbase__content-header__search-bar {
+      width: 100%;
+   }
+}

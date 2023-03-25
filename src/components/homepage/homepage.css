@@ -4,3 +4,9 @@
    grid-template-columns: 18rem auto;
    gap: 1.5rem;
 }
+
+@media screen and (max-width: 550px) {
+   .flickbase__homepage {
+      grid-template-columns: none;
+   }
+}

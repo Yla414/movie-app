@@ -9,9 +9,19 @@
    display: none;
 }
 
+::-webkit-scrollbar {
+   width: 4px;
+   background: var(--grey-text)
+}
+
+::-webkit-scrollbar-thumb {
+   width: 4px;
+   background: var(--color-primary);
+   height: 1rem;
+   border-radius: 1rem;
+}
+
 body {
-   width: 100vw;
-   height: 100vh;
    color: var(--color-white);
    background: var(--color-bg);
 
